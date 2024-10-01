@@ -1,0 +1,387 @@
+---> ---cifar100---
+---> Argument
+    └> network     : resnet32
+    └> epochs      : 200
+    └> batch_size  : 128
+    └> update_epoch: 1
+    └> lr          : 0.1
+    └> lr_decay    : 0.01
+    └> momentum    : 0.9
+    └> wd          : 0.0002
+    └> nesterov    : False
+    └> scheduler   : warmup
+    └> warmup      : 5
+    └> aug_prob    : 0.5
+    └> cutout      : False
+    └> cmo         : False
+    └> posthoc_la  : False
+    └> cuda        : True
+    └> aug_type    : autoaug_cifar
+    └> sim_type    : none
+    └> max_d       : 30
+    └> num_test    : 10
+    └> accept_rate : 0.6
+    └> verbose     : False
+    └> use_norm    : False
+    └> supper_classes: 10
+    └> out         : ./logs/results/cifar100/ce@N_500_ir_50/hesso_LT-vote/cifar100/ce@N_500_ir_50/
+    └> data_dir    : /home/data/
+    └> workers     : 4
+    └> seed        : None
+    └> gpu         : 0
+    └> dataset     : cifar100
+    └> num_max     : 500
+    └> imb_ratio   : 50
+    └> num_experts : 3
+    └> ride_distill: False
+    └> ce          : True
+    └> bs          : False
+    └> bcl         : False
+    └> ce_drw      : False
+    └> ldam_drw    : False
+    └> gml         : False
+    └> kps         : False
+    └> shike       : False
+    └> mgda        : False
+    └> cagrad      : True
+    └> chs         : False
+    └> pla         : False
+    └> pcg         : False
+    └> tasks       : ['ce']
+    └> mgda_mode   : none
+    └> base_beta   : 0.5
+    └> llm         : False
+    └> llm_name    : alibaba
+    └> llm_mode    : 0
+    └> out_cut     : True
+    └> data_aug    : vanilla
+    └> use_randaug : False
+    └> cuda_upgrade: 1
+    └> cuda_downgrade: 1
+    └> hesso       : True
+    └> isc         : LT-vote
+    └> loss_fn     : ce
+    └> num_class   : 100
+1.16.2  opset= 21
+==> Preparing imbalanced CIFAR-100
+Files already downloaded and verified
+autoaug_cifar
+c set = tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=torch.int32)
+Operation set = tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=torch.int32)
+Files already downloaded and verified
+#Train: 12608, #Test: 10000
+[500, 480, 462, 444, 426, 410, 394, 379, 364, 350, 336, 323, 311, 299, 287, 276, 265, 255, 245, 235, 226, 218, 209, 201, 193, 186, 178, 172, 165, 158, 152, 146, 141, 135, 130, 125, 120, 115, 111, 107, 102, 98, 95, 91, 87, 84, 81, 78, 75, 72, 69, 66, 64, 61, 59, 56, 54, 52, 50, 48, 46, 44, 43, 41, 39, 38, 36, 35, 34, 32, 31, 30, 29, 27, 26, 25, 24, 23, 22, 22, 21, 20, 19, 18, 18, 17, 16, 16, 15, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 10]
+==> creating resnet32
+['ce']
+==> creating resnet32
+OTO graph constructor
+graph build
+LT-vote
+Setup HESSO
+Target redundant groups per period:  [0]
+Max state: 1 // Min state: 0
+0 4950
+---> Epoch: [1 | 30]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	1.7770
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0207, 4.1553,] 	Acc:[  46.7267, 46.7267, ]
+    └> [Stats]	Many: [ 0.5529, 0.5529,] Medium: [  0.4341, 0.4341,] Few: [ 0.3456, 0.3456,]
+    └> [Best ]	Acc:	46.7267	Many:	55.2927	Medium:	43.4146	Few:	34.5556
+    └> [Param]	LR:	0.10000000
+Max state: 2 // Min state: 0
+99 4950
+---> Epoch: [2 | 30]
+    └> Max_state: 2, min_state: 0
+    └> [Train]	Loss:	1.6917
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0299, 4.1541,] 	Acc:[  46.6377, 46.6377, ]
+    └> [Stats]	Many: [ 0.5590, 0.5590,] Medium: [  0.4366, 0.4366,] Few: [ 0.3328, 0.3328,]
+    └> [Best ]	Acc:	46.7267	Many:	55.2927	Medium:	43.4146	Few:	34.5556
+    └> [Param]	LR:	0.10000000
+Max state: 3 // Min state: 0
+198 4950
+---> Epoch: [3 | 30]
+    └> Max_state: 3, min_state: 0
+    └> [Train]	Loss:	1.6801
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0533, 4.1567,] 	Acc:[  46.7267, 46.7267, ]
+    └> [Stats]	Many: [ 0.5617, 0.5617,] Medium: [  0.4351, 0.4351,] Few: [ 0.3156, 0.3156,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 4 // Min state: 0
+297 4950
+---> Epoch: [4 | 30]
+    └> Max_state: 4, min_state: 0
+    └> [Train]	Loss:	1.6679
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0547, 4.1563,] 	Acc:[  46.6278, 46.6278, ]
+    └> [Stats]	Many: [ 0.5641, 0.5641,] Medium: [  0.4378, 0.4378,] Few: [ 0.3061, 0.3061,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 3 // Min state: 0
+396 4950
+---> Epoch: [5 | 30]
+    └> Max_state: 3, min_state: 0
+    └> [Train]	Loss:	1.6948
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0548, 4.1562,] 	Acc:[  46.5684, 46.5684, ]
+    └> [Stats]	Many: [ 0.5659, 0.5659,] Medium: [  0.4300, 0.4300,] Few: [ 0.3206, 0.3206,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 2 // Min state: 0
+495 4950
+---> Epoch: [6 | 30]
+    └> Max_state: 2, min_state: 0
+    └> [Train]	Loss:	1.6654
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0771, 4.1570,] 	Acc:[  46.4893, 46.4893, ]
+    └> [Stats]	Many: [ 0.5773, 0.5773,] Medium: [  0.4237, 0.4237,] Few: [ 0.3044, 0.3044,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 3 // Min state: 0
+594 4950
+---> Epoch: [7 | 30]
+    └> Max_state: 3, min_state: 0
+    └> [Train]	Loss:	1.6467
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0805, 4.1578,] 	Acc:[  46.1333, 46.1333, ]
+    └> [Stats]	Many: [ 0.5566, 0.5566,] Medium: [  0.4376, 0.4376,] Few: [ 0.3156, 0.3156,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 4 // Min state: 0
+693 4950
+---> Epoch: [8 | 30]
+    └> Max_state: 4, min_state: 0
+    └> [Train]	Loss:	1.6522
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0890, 4.1579,] 	Acc:[  46.4003, 46.4003, ]
+    └> [Stats]	Many: [ 0.5793, 0.5793,] Medium: [  0.4232, 0.4232,] Few: [ 0.2961, 0.2961,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 5 // Min state: 0
+792 4950
+---> Epoch: [9 | 30]
+    └> Max_state: 5, min_state: 0
+    └> [Train]	Loss:	1.6326
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0810, 4.1599,] 	Acc:[  46.2025, 46.2025, ]
+    └> [Stats]	Many: [ 0.5622, 0.5622,] Medium: [  0.4241, 0.4241,] Few: [ 0.3217, 0.3217,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 6 // Min state: 0
+891 4950
+---> Epoch: [10 | 30]
+    └> Max_state: 6, min_state: 0
+    └> [Train]	Loss:	1.6435
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.0919, 4.1576,] 	Acc:[  46.2223, 46.2223, ]
+    └> [Stats]	Many: [ 0.5739, 0.5739,] Medium: [  0.4280, 0.4280,] Few: [ 0.2989, 0.2989,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 7 // Min state: 0
+990 4950
+---> Epoch: [11 | 30]
+    └> Max_state: 7, min_state: 0
+    └> [Train]	Loss:	1.6535
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1023, 4.1617,] 	Acc:[  46.0938, 46.0938, ]
+    └> [Stats]	Many: [ 0.5644, 0.5644,] Medium: [  0.4266, 0.4266,] Few: [ 0.3011, 0.3011,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 6 // Min state: 0
+1089 4950
+---> Epoch: [12 | 30]
+    └> Max_state: 6, min_state: 0
+    └> [Train]	Loss:	1.6504
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1004, 4.1575,] 	Acc:[  46.4399, 46.4399, ]
+    └> [Stats]	Many: [ 0.5654, 0.5654,] Medium: [  0.4349, 0.4349,] Few: [ 0.3033, 0.3033,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 7 // Min state: 0
+1188 4950
+---> Epoch: [13 | 30]
+    └> Max_state: 7, min_state: 0
+    └> [Train]	Loss:	1.6270
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1158, 4.1582,] 	Acc:[  46.1630, 46.1630, ]
+    └> [Stats]	Many: [ 0.5680, 0.5680,] Medium: [  0.4354, 0.4354,] Few: [ 0.2922, 0.2922,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 8 // Min state: 0
+1287 4950
+---> Epoch: [14 | 30]
+    └> Max_state: 8, min_state: 0
+    └> [Train]	Loss:	1.6151
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1087, 4.1579,] 	Acc:[  46.6080, 46.6080, ]
+    └> [Stats]	Many: [ 0.5659, 0.5659,] Medium: [  0.4278, 0.4278,] Few: [ 0.3161, 0.3161,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 7 // Min state: 0
+1386 4950
+---> Epoch: [15 | 30]
+    └> Max_state: 7, min_state: 0
+    └> [Train]	Loss:	1.6483
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1151, 4.1545,] 	Acc:[  46.4597, 46.4597, ]
+    └> [Stats]	Many: [ 0.5693, 0.5693,] Medium: [  0.4278, 0.4278,] Few: [ 0.3272, 0.3272,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 8 // Min state: 0
+1485 4950
+---> Epoch: [16 | 30]
+    └> Max_state: 8, min_state: 0
+    └> [Train]	Loss:	1.6218
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1261, 4.1578,] 	Acc:[  46.3410, 46.3410, ]
+    └> [Stats]	Many: [ 0.5707, 0.5707,] Medium: [  0.4293, 0.4293,] Few: [ 0.3022, 0.3022,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 9 // Min state: 0
+1584 4950
+---> Epoch: [17 | 30]
+    └> Max_state: 9, min_state: 0
+    └> [Train]	Loss:	1.6302
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1281, 4.1579,] 	Acc:[  46.1926, 46.1926, ]
+    └> [Stats]	Many: [ 0.5605, 0.5605,] Medium: [  0.4344, 0.4344,] Few: [ 0.3133, 0.3133,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 10 // Min state: 0
+1683 4950
+---> Epoch: [18 | 30]
+    └> Max_state: 10, min_state: 0
+    └> [Train]	Loss:	1.6470
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1409, 4.1616,] 	Acc:[  46.1036, 46.1036, ]
+    └> [Stats]	Many: [ 0.5651, 0.5651,] Medium: [  0.4280, 0.4280,] Few: [ 0.2967, 0.2967,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 9 // Min state: 0
+1782 4950
+---> Epoch: [19 | 30]
+    └> Max_state: 9, min_state: 0
+    └> [Train]	Loss:	1.6315
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1330, 4.1619,] 	Acc:[  45.9355, 45.9355, ]
+    └> [Stats]	Many: [ 0.5671, 0.5671,] Medium: [  0.4232, 0.4232,] Few: [ 0.3017, 0.3017,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 10 // Min state: 0
+1881 4950
+---> Epoch: [20 | 30]
+    └> Max_state: 10, min_state: 0
+    └> [Train]	Loss:	1.6178
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1322, 4.1600,] 	Acc:[  46.1926, 46.1926, ]
+    └> [Stats]	Many: [ 0.5595, 0.5595,] Medium: [  0.4312, 0.4312,] Few: [ 0.3111, 0.3111,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 9 // Min state: 0
+1980 4950
+---> Epoch: [21 | 30]
+    └> Max_state: 9, min_state: 0
+    └> [Train]	Loss:	1.6321
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1380, 4.1591,] 	Acc:[  46.2816, 46.2816, ]
+    └> [Stats]	Many: [ 0.5700, 0.5700,] Medium: [  0.4254, 0.4254,] Few: [ 0.3056, 0.3056,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 8 // Min state: 0
+2079 4950
+---> Epoch: [22 | 30]
+    └> Max_state: 8, min_state: 0
+    └> [Train]	Loss:	1.6563
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1342, 4.1571,] 	Acc:[  46.6871, 46.6871, ]
+    └> [Stats]	Many: [ 0.5759, 0.5759,] Medium: [  0.4268, 0.4268,] Few: [ 0.3000, 0.3000,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 9 // Min state: 0
+2178 4950
+---> Epoch: [23 | 30]
+    └> Max_state: 9, min_state: 0
+    └> [Train]	Loss:	1.6264
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1448, 4.1603,] 	Acc:[  46.3014, 46.3014, ]
+    └> [Stats]	Many: [ 0.5722, 0.5722,] Medium: [  0.4222, 0.4222,] Few: [ 0.3011, 0.3011,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 8 // Min state: 0
+2277 4950
+---> Epoch: [24 | 30]
+    └> Max_state: 8, min_state: 0
+    └> [Train]	Loss:	1.6245
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1339, 4.1580,] 	Acc:[  46.3904, 46.3904, ]
+    └> [Stats]	Many: [ 0.5707, 0.5707,] Medium: [  0.4346, 0.4346,] Few: [ 0.2889, 0.2889,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 9 // Min state: 0
+2376 4950
+---> Epoch: [25 | 30]
+    └> Max_state: 9, min_state: 0
+    └> [Train]	Loss:	1.6346
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1244, 4.1594,] 	Acc:[  46.3904, 46.3904, ]
+    └> [Stats]	Many: [ 0.5727, 0.5727,] Medium: [  0.4234, 0.4234,] Few: [ 0.3022, 0.3022,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 8 // Min state: 0
+2475 4950
+---> Epoch: [26 | 30]
+    └> Max_state: 8, min_state: 0
+    └> [Train]	Loss:	1.5771
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1295, 4.1575,] 	Acc:[  46.4399, 46.4399, ]
+    └> [Stats]	Many: [ 0.5793, 0.5793,] Medium: [  0.4224, 0.4224,] Few: [ 0.3000, 0.3000,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 7 // Min state: 0
+2574 4950
+---> Epoch: [27 | 30]
+    └> Max_state: 7, min_state: 0
+    └> [Train]	Loss:	1.5877
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1347, 4.1567,] 	Acc:[  46.2421, 46.2421, ]
+    └> [Stats]	Many: [ 0.5678, 0.5678,] Medium: [  0.4376, 0.4376,] Few: [ 0.2961, 0.2961,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 8 // Min state: 0
+2673 4950
+---> Epoch: [28 | 30]
+    └> Max_state: 8, min_state: 0
+    └> [Train]	Loss:	1.5799
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1433, 4.1586,] 	Acc:[  46.4695, 46.4695, ]
+    └> [Stats]	Many: [ 0.5634, 0.5634,] Medium: [  0.4266, 0.4266,] Few: [ 0.3206, 0.3206,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 7 // Min state: 0
+2772 4950
+---> Epoch: [29 | 30]
+    └> Max_state: 7, min_state: 0
+    └> [Train]	Loss:	1.5826
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1592, 4.1617,] 	Acc:[  46.0245, 46.0245, ]
+    └> [Stats]	Many: [ 0.5639, 0.5639,] Medium: [  0.4278, 0.4278,] Few: [ 0.2994, 0.2994,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+Max state: 6 // Min state: 0
+2871 4950
+---> Epoch: [30 | 30]
+    └> Max_state: 6, min_state: 0
+    └> [Train]	Loss:	1.6071
+    └> [test]	Task: [ce , cat_out]
+    └> [Test]	Loss: [ 2.1520, 4.1599,] 	Acc:[  46.2025, 46.2025, ]
+    └> [Stats]	Many: [ 0.5656, 0.5656,] Medium: [  0.4302, 0.4302,] Few: [ 0.3000, 0.3000,]
+    └> [Best ]	Acc:	46.7267	Many:	56.1707	Medium:	43.5122	Few:	31.5556
+    └> [Param]	LR:	0.10000000
+---> Final performance...
+    └> best bAcc (test):	46.7267
+    └> best statistics:	Many:	0.5617072582244873	Med:	0.43512195348739624	Few:	0.31555551290512085
+---> Training Time: 0:04:04.88
+---> FLOP  reduction (%) :  0.0  	 8848.703488000001  	 8848.703488000001 
+---> Param reduction (%) :  0.0 	 0.472564	 0.472564

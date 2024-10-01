@@ -1,0 +1,637 @@
+---> ---cifar100---
+---> Argument
+    └> network     : resnet32
+    └> epochs      : 200
+    └> batch_size  : 128
+    └> update_epoch: 1
+    └> lr          : 0.1
+    └> lr_decay    : 0.01
+    └> momentum    : 0.9
+    └> wd          : 0.0002
+    └> nesterov    : False
+    └> scheduler   : warmup
+    └> warmup      : 5
+    └> aug_prob    : 0.5
+    └> cutout      : False
+    └> cmo         : False
+    └> posthoc_la  : False
+    └> cuda        : True
+    └> aug_type    : autoaug_cifar
+    └> sim_type    : none
+    └> max_d       : 30
+    └> num_test    : 10
+    └> accept_rate : 0.6
+    └> verbose     : False
+    └> use_norm    : False
+    └> supper_classes: 10
+    └> out         : ./logs/results/cifar100/bs@N_500_ir_100/hesso_none_target_group_sparsity_0.7/cifar100/bs@N_500_ir_100/
+    └> data_dir    : /home/data/
+    └> workers     : 4
+    └> seed        : None
+    └> gpu         : 0
+    └> dataset     : cifar100
+    └> num_max     : 500
+    └> imb_ratio   : 100
+    └> num_experts : 3
+    └> ride_distill: False
+    └> ce          : False
+    └> bs          : True
+    └> bcl         : False
+    └> ce_drw      : False
+    └> ldam_drw    : False
+    └> gml         : False
+    └> kps         : False
+    └> shike       : False
+    └> mgda        : False
+    └> cagrad      : False
+    └> chs         : False
+    └> pla         : False
+    └> pcg         : False
+    └> tasks       : ['bs']
+    └> mgda_mode   : none
+    └> base_beta   : 0.5
+    └> llm         : False
+    └> llm_name    : alibaba
+    └> llm_mode    : 0
+    └> out_cut     : True
+    └> data_aug    : vanilla
+    └> use_randaug : False
+    └> cuda_upgrade: 1
+    └> cuda_downgrade: 1
+    └> hesso       : False
+    └> isc         : default
+    └> target_group_sparsity: 0.7
+    └> save_all_epoch: False
+    └> ATO         : True
+    └> loss_fn     : bs
+    └> num_class   : 100
+1.16.2  opset= 21
+==> Preparing imbalanced CIFAR-100
+Files already downloaded and verified
+autoaug_cifar
+c set = tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=torch.int32)
+Operation set = tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=torch.int32)
+Files already downloaded and verified
+#Train: 10847, #Test: 10000
+[500, 477, 455, 434, 415, 396, 378, 361, 344, 328, 314, 299, 286, 273, 260, 248, 237, 226, 216, 206, 197, 188, 179, 171, 163, 156, 149, 142, 135, 129, 123, 118, 112, 107, 102, 98, 93, 89, 85, 81, 77, 74, 70, 67, 64, 61, 58, 56, 53, 51, 48, 46, 44, 42, 40, 38, 36, 35, 33, 32, 30, 29, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 15, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5]
+==> creating resnet32
+['bs']
+==> creating resnet32
+BasicBlock
+1
+structure [16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 64, 64, 64, 64, 64] 16
+structure [16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 64, 64, 64, 64, 64]
+27
+20
+7
+0
+16
+16
++ Number of FLOPs: 0.00205G
+0.5
+OTO graph constructor
+graph build
+default
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+/home/zz/anaconda3/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:138: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+---> Epoch: [1 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	4.2151
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.4879, 4.6004,] 	Acc:[  2.1559, 2.1559, ]
+    └> [Stats]	Many: [ 0.0377, 0.0377,] Medium: [  0.0017, 0.0017,] Few: [ 0.0267, 0.0267,]
+    └> [Best ]	Acc:	2.1559	Many:	3.7714	Medium:	0.1714	Few:	2.6667
+    └> [Param]	LR:	0.02000000
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [2 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	4.0256
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.4123, 4.6009,] 	Acc:[  2.1064, 2.1064, ]
+    └> [Stats]	Many: [ 0.0529, 0.0529,] Medium: [  0.0014, 0.0014,] Few: [ 0.0077, 0.0077,]
+    └> [Best ]	Acc:	2.1559	Many:	3.7714	Medium:	0.1714	Few:	2.6667
+    └> [Param]	LR:	0.04000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [3 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.9587
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.3803, 4.5879,] 	Acc:[  3.4612, 3.4612, ]
+    └> [Stats]	Many: [ 0.0706, 0.0706,] Medium: [  0.0217, 0.0217,] Few: [ 0.0067, 0.0067,]
+    └> [Best ]	Acc:	3.4612	Many:	7.0571	Medium:	2.1714	Few:	0.6667
+    └> [Param]	LR:	0.06000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [4 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.9092
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.3868, 4.5856,] 	Acc:[  3.6887, 3.6887, ]
+    └> [Stats]	Many: [ 0.0657, 0.0657,] Medium: [  0.0386, 0.0386,] Few: [ 0.0003, 0.0003,]
+    └> [Best ]	Acc:	3.6887	Many:	6.5714	Medium:	3.8571	Few:	0.0333
+    └> [Param]	LR:	0.08000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [5 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.8526
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.2661, 4.5751,] 	Acc:[  4.6578, 4.6578, ]
+    └> [Stats]	Many: [ 0.0997, 0.0997,] Medium: [  0.0349, 0.0349,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	4.6578	Many:	9.9714	Medium:	3.4857	Few:	0.0000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [6 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.7988
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.0566, 4.5731,] 	Acc:[  4.8556, 4.8556, ]
+    └> [Stats]	Many: [ 0.0823, 0.0823,] Medium: [  0.0569, 0.0569,] Few: [ 0.0013, 0.0013,]
+    └> [Best ]	Acc:	4.8556	Many:	8.2286	Medium:	5.6857	Few:	0.1333
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [7 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.7419
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.0382, 4.5591,] 	Acc:[  6.2401, 6.2401, ]
+    └> [Stats]	Many: [ 0.1360, 0.1360,] Medium: [  0.0443, 0.0443,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	6.2401	Many:	13.6000	Medium:	4.4286	Few:	0.0000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [8 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.7070
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 5.0136, 4.5576,] 	Acc:[  6.4577, 6.4577, ]
+    └> [Stats]	Many: [ 0.1297, 0.1297,] Medium: [  0.0460, 0.0460,] Few: [ 0.0103, 0.0103,]
+    └> [Best ]	Acc:	6.4577	Many:	12.9714	Medium:	4.6000	Few:	1.0333
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [9 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.6554
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.9958, 4.5539,] 	Acc:[  6.8928, 6.8928, ]
+    └> [Stats]	Many: [ 0.1337, 0.1337,] Medium: [  0.0589, 0.0589,] Few: [ 0.0030, 0.0030,]
+    └> [Best ]	Acc:	6.8928	Many:	13.3714	Medium:	5.8857	Few:	0.3000
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [10 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.6262
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.8850, 4.5468,] 	Acc:[  7.4565, 7.4565, ]
+    └> [Stats]	Many: [ 0.1451, 0.1451,] Medium: [  0.0651, 0.0651,] Few: [ 0.0060, 0.0060,]
+    └> [Best ]	Acc:	7.4565	Many:	14.5143	Medium:	6.5143	Few:	0.6000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [11 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.6025
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.8720, 4.5386,] 	Acc:[  8.4059, 8.4059, ]
+    └> [Stats]	Many: [ 0.1731, 0.1731,] Medium: [  0.0623, 0.0623,] Few: [ 0.0040, 0.0040,]
+    └> [Best ]	Acc:	8.4059	Many:	17.3143	Medium:	6.2286	Few:	0.4000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [12 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.5661
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.8389, 4.5378,] 	Acc:[  8.4850, 8.4850, ]
+    └> [Stats]	Many: [ 0.1634, 0.1634,] Medium: [  0.0737, 0.0737,] Few: [ 0.0047, 0.0047,]
+    └> [Best ]	Acc:	8.4850	Many:	16.3429	Medium:	7.3714	Few:	0.4667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [13 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.5442
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.8588, 4.5323,] 	Acc:[  8.9597, 8.9597, ]
+    └> [Stats]	Many: [ 0.1743, 0.1743,] Medium: [  0.0729, 0.0729,] Few: [ 0.0113, 0.0113,]
+    └> [Best ]	Acc:	8.9597	Many:	17.4286	Medium:	7.2857	Few:	1.1333
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [14 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.5116
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.7492, 4.5246,] 	Acc:[  9.8596, 9.8596, ]
+    └> [Stats]	Many: [ 0.1746, 0.1746,] Medium: [  0.0874, 0.0874,] Few: [ 0.0197, 0.0197,]
+    └> [Best ]	Acc:	9.8596	Many:	17.4571	Medium:	8.7429	Few:	1.9667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [15 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.4690
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.8141, 4.5246,] 	Acc:[  9.9288, 9.9288, ]
+    └> [Stats]	Many: [ 0.1811, 0.1811,] Medium: [  0.0831, 0.0831,] Few: [ 0.0170, 0.0170,]
+    └> [Best ]	Acc:	9.9288	Many:	18.1143	Medium:	8.3143	Few:	1.7000
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [16 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.4564
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.6927, 4.5131,] 	Acc:[  10.9276, 10.9276, ]
+    └> [Stats]	Many: [ 0.1843, 0.1843,] Medium: [  0.0951, 0.0951,] Few: [ 0.0377, 0.0377,]
+    └> [Best ]	Acc:	10.9276	Many:	18.4286	Medium:	9.5143	Few:	3.7667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [17 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.4163
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.6747, 4.5165,] 	Acc:[  10.5222, 10.5222, ]
+    └> [Stats]	Many: [ 0.1711, 0.1711,] Medium: [  0.1066, 0.1066,] Few: [ 0.0283, 0.0283,]
+    └> [Best ]	Acc:	10.9276	Many:	18.4286	Medium:	9.5143	Few:	3.7667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [18 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.3754
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.7040, 4.5097,] 	Acc:[  11.4715, 11.4715, ]
+    └> [Stats]	Many: [ 0.1791, 0.1791,] Medium: [  0.1123, 0.1123,] Few: [ 0.0350, 0.0350,]
+    └> [Best ]	Acc:	11.4715	Many:	17.9143	Medium:	11.2286	Few:	3.5000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [19 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.3838
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.6312, 4.5066,] 	Acc:[  11.5704, 11.5704, ]
+    └> [Stats]	Many: [ 0.1880, 0.1880,] Medium: [  0.1003, 0.1003,] Few: [ 0.0490, 0.0490,]
+    └> [Best ]	Acc:	11.5704	Many:	18.8000	Medium:	10.0286	Few:	4.9000
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [20 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.3613
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.6570, 4.4993,] 	Acc:[  12.2231, 12.2231, ]
+    └> [Stats]	Many: [ 0.2149, 0.2149,] Medium: [  0.0946, 0.0946,] Few: [ 0.0487, 0.0487,]
+    └> [Best ]	Acc:	12.2231	Many:	21.4857	Medium:	9.4571	Few:	4.8667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [21 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.3098
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.5180, 4.4969,] 	Acc:[  12.4604, 12.4604, ]
+    └> [Stats]	Many: [ 0.1971, 0.1971,] Medium: [  0.1334, 0.1334,] Few: [ 0.0320, 0.0320,]
+    └> [Best ]	Acc:	12.4604	Many:	19.7143	Medium:	13.3429	Few:	3.2000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [22 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.2954
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.7020, 4.5032,] 	Acc:[  11.8374, 11.8374, ]
+    └> [Stats]	Many: [ 0.2109, 0.2109,] Medium: [  0.1080, 0.1080,] Few: [ 0.0247, 0.0247,]
+    └> [Best ]	Acc:	12.4604	Many:	19.7143	Medium:	13.3429	Few:	3.2000
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [23 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.2669
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.4493, 4.4932,] 	Acc:[  12.9648, 12.9648, ]
+    └> [Stats]	Many: [ 0.1994, 0.1994,] Medium: [  0.1100, 0.1100,] Few: [ 0.0690, 0.0690,]
+    └> [Best ]	Acc:	12.9648	Many:	19.9429	Medium:	11.0000	Few:	6.9000
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [24 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.2716
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.4339, 4.4847,] 	Acc:[  13.7362, 13.7362, ]
+    └> [Stats]	Many: [ 0.2186, 0.2186,] Medium: [  0.1403, 0.1403,] Few: [ 0.0397, 0.0397,]
+    └> [Best ]	Acc:	13.7362	Many:	21.8571	Medium:	14.0286	Few:	3.9667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-1.000 l-2 s-1.000 l-3 s-1.000 l-4 s-1.000 l-5 s-1.000 l-6 s-1.000 l-7 s-1.000 l-8 s-1.000 l-9 s-1.000 l-10 s-1.000 l-11 s-1.000 l-12 s-1.000 l-13 s-1.000 l-14 s-1.000 l-15 s-1.000 l-16 s-1.000 
+---> Epoch: [25 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.2339
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3950, 4.4796,] 	Acc:[  14.2405, 14.2405, ]
+    └> [Stats]	Many: [ 0.2460, 0.2460,] Medium: [  0.1326, 0.1326,] Few: [ 0.0337, 0.0337,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.562 l-2 s-0.562 l-3 s-0.500 l-4 s-0.781 l-5 s-0.531 l-6 s-0.719 l-7 s-0.250 l-8 s-0.812 l-9 s-0.578 l-10 s-0.797 l-11 s-0.062 l-12 s-0.078 l-13 s-0.109 l-14 s-0.125 l-15 s-0.062 l-16 s-0.109 
+---> Epoch: [26 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.5028
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.7227, 4.5234,] 	Acc:[  9.8398, 9.8398, ]
+    └> [Stats]	Many: [ 0.1357, 0.1357,] Medium: [  0.1063, 0.1063,] Few: [ 0.0470, 0.0470,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.562 l-4 s-0.719 l-5 s-0.594 l-6 s-0.781 l-7 s-0.156 l-8 s-0.797 l-9 s-0.547 l-10 s-0.766 l-11 s-0.031 l-12 s-0.062 l-13 s-0.062 l-14 s-0.125 l-15 s-0.062 l-16 s-0.078 
+---> Epoch: [27 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.4278
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.5722, 4.5105,] 	Acc:[  11.2540, 11.2540, ]
+    └> [Stats]	Many: [ 0.1600, 0.1600,] Medium: [  0.1206, 0.1206,] Few: [ 0.0450, 0.0450,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.688 l-3 s-0.562 l-4 s-0.781 l-5 s-0.562 l-6 s-0.688 l-7 s-0.250 l-8 s-0.812 l-9 s-0.578 l-10 s-0.828 l-11 s-0.016 l-12 s-0.031 l-13 s-0.062 l-14 s-0.141 l-15 s-0.047 l-16 s-0.094 
+---> Epoch: [28 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.3771
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.5575, 4.4966,] 	Acc:[  12.7670, 12.7670, ]
+    └> [Stats]	Many: [ 0.2346, 0.2346,] Medium: [  0.0909, 0.0909,] Few: [ 0.0390, 0.0390,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.500 l-2 s-0.688 l-3 s-0.562 l-4 s-0.812 l-5 s-0.656 l-6 s-0.781 l-7 s-0.188 l-8 s-0.844 l-9 s-0.609 l-10 s-0.844 l-11 s-0.047 l-12 s-0.047 l-13 s-0.031 l-14 s-0.172 l-15 s-0.016 l-16 s-0.109 
+---> Epoch: [29 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.3305
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.5541, 4.4953,] 	Acc:[  12.7571, 12.7571, ]
+    └> [Stats]	Many: [ 0.2011, 0.2011,] Medium: [  0.1323, 0.1323,] Few: [ 0.0340, 0.0340,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.562 l-4 s-0.812 l-5 s-0.594 l-6 s-0.750 l-7 s-0.250 l-8 s-0.844 l-9 s-0.625 l-10 s-0.875 l-11 s-0.000 l-12 s-0.031 l-13 s-0.062 l-14 s-0.125 l-15 s-0.047 l-16 s-0.078 
+---> Epoch: [30 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.3035
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.4917, 4.4914,] 	Acc:[  13.1428, 13.1428, ]
+    └> [Stats]	Many: [ 0.2163, 0.2163,] Medium: [  0.1294, 0.1294,] Few: [ 0.0327, 0.0327,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.562 l-4 s-0.812 l-5 s-0.656 l-6 s-0.781 l-7 s-0.188 l-8 s-0.875 l-9 s-0.625 l-10 s-0.875 l-11 s-0.016 l-12 s-0.062 l-13 s-0.031 l-14 s-0.094 l-15 s-0.016 l-16 s-0.125 
+---> Epoch: [31 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.2517
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.4305, 4.4812,] 	Acc:[  14.0823, 14.0823, ]
+    └> [Stats]	Many: [ 0.2089, 0.2089,] Medium: [  0.1409, 0.1409,] Few: [ 0.0620, 0.0620,]
+    └> [Best ]	Acc:	14.2405	Many:	24.6000	Medium:	13.2571	Few:	3.3667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.562 l-2 s-0.688 l-3 s-0.500 l-4 s-0.812 l-5 s-0.594 l-6 s-0.750 l-7 s-0.188 l-8 s-0.859 l-9 s-0.672 l-10 s-0.906 l-11 s-0.031 l-12 s-0.047 l-13 s-0.062 l-14 s-0.109 l-15 s-0.000 l-16 s-0.141 
+---> Epoch: [32 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.2574
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3775, 4.4763,] 	Acc:[  14.6361, 14.6361, ]
+    └> [Stats]	Many: [ 0.2123, 0.2123,] Medium: [  0.1594, 0.1594,] Few: [ 0.0527, 0.0527,]
+    └> [Best ]	Acc:	14.6361	Many:	21.2286	Medium:	15.9429	Few:	5.2667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.844 l-5 s-0.594 l-6 s-0.750 l-7 s-0.219 l-8 s-0.875 l-9 s-0.688 l-10 s-0.922 l-11 s-0.000 l-12 s-0.047 l-13 s-0.047 l-14 s-0.094 l-15 s-0.016 l-16 s-0.109 
+---> Epoch: [33 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.1835
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3863, 4.4717,] 	Acc:[  15.0218, 15.0218, ]
+    └> [Stats]	Many: [ 0.2303, 0.2303,] Medium: [  0.1489, 0.1489,] Few: [ 0.0593, 0.0593,]
+    └> [Best ]	Acc:	15.0218	Many:	23.0286	Medium:	14.8857	Few:	5.9333
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.562 l-2 s-0.625 l-3 s-0.500 l-4 s-0.844 l-5 s-0.594 l-6 s-0.750 l-7 s-0.188 l-8 s-0.922 l-9 s-0.703 l-10 s-0.922 l-11 s-0.016 l-12 s-0.047 l-13 s-0.016 l-14 s-0.094 l-15 s-0.000 l-16 s-0.141 
+---> Epoch: [34 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.1870
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3734, 4.4751,] 	Acc:[  14.6855, 14.6855, ]
+    └> [Stats]	Many: [ 0.2169, 0.2169,] Medium: [  0.1371, 0.1371,] Few: [ 0.0773, 0.0773,]
+    └> [Best ]	Acc:	15.0218	Many:	23.0286	Medium:	14.8857	Few:	5.9333
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.812 l-5 s-0.594 l-6 s-0.750 l-7 s-0.188 l-8 s-0.922 l-9 s-0.688 l-10 s-0.922 l-11 s-0.000 l-12 s-0.047 l-13 s-0.031 l-14 s-0.094 l-15 s-0.000 l-16 s-0.156 
+---> Epoch: [35 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.1814
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3776, 4.4745,] 	Acc:[  14.7449, 14.7449, ]
+    └> [Stats]	Many: [ 0.2420, 0.2420,] Medium: [  0.1314, 0.1314,] Few: [ 0.0567, 0.0567,]
+    └> [Best ]	Acc:	15.0218	Many:	23.0286	Medium:	14.8857	Few:	5.9333
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.812 l-5 s-0.594 l-6 s-0.750 l-7 s-0.219 l-8 s-0.922 l-9 s-0.672 l-10 s-0.922 l-11 s-0.031 l-12 s-0.047 l-13 s-0.016 l-14 s-0.094 l-15 s-0.000 l-16 s-0.156 
+---> Epoch: [36 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.1759
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3669, 4.4638,] 	Acc:[  15.8030, 15.8030, ]
+    └> [Stats]	Many: [ 0.2337, 0.2337,] Medium: [  0.1617, 0.1617,] Few: [ 0.0667, 0.0667,]
+    └> [Best ]	Acc:	15.8030	Many:	23.3714	Medium:	16.1714	Few:	6.6667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.812 l-5 s-0.594 l-6 s-0.719 l-7 s-0.219 l-8 s-0.922 l-9 s-0.719 l-10 s-0.938 l-11 s-0.000 l-12 s-0.047 l-13 s-0.031 l-14 s-0.094 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [37 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.1748
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3238, 4.4727,] 	Acc:[  14.9921, 14.9921, ]
+    └> [Stats]	Many: [ 0.2226, 0.2226,] Medium: [  0.1609, 0.1609,] Few: [ 0.0510, 0.0510,]
+    └> [Best ]	Acc:	15.8030	Many:	23.3714	Medium:	16.1714	Few:	6.6667
+    └> [Param]	LR:	0.10000000
+Max state: 2 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.812 l-5 s-0.594 l-6 s-0.719 l-7 s-0.219 l-8 s-0.922 l-9 s-0.703 l-10 s-0.938 l-11 s-0.016 l-12 s-0.047 l-13 s-0.016 l-14 s-0.109 l-15 s-0.000 l-16 s-0.125 
+---> Epoch: [38 | 200]
+    └> Max_state: 2, min_state: 0
+    └> [Train]	Loss:	3.1243
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.2886, 4.4609,] 	Acc:[  16.0898, 16.0898, ]
+    └> [Stats]	Many: [ 0.2380, 0.2380,] Medium: [  0.1603, 0.1603,] Few: [ 0.0730, 0.0730,]
+    └> [Best ]	Acc:	16.0898	Many:	23.8000	Medium:	16.0286	Few:	7.3000
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.812 l-5 s-0.594 l-6 s-0.719 l-7 s-0.281 l-8 s-0.938 l-9 s-0.734 l-10 s-0.938 l-11 s-0.000 l-12 s-0.047 l-13 s-0.016 l-14 s-0.078 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [39 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0946
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3191, 4.4573,] 	Acc:[  16.4458, 16.4458, ]
+    └> [Stats]	Many: [ 0.2674, 0.2674,] Medium: [  0.1437, 0.1437,] Few: [ 0.0700, 0.0700,]
+    └> [Best ]	Acc:	16.4458	Many:	26.7429	Medium:	14.3714	Few:	7.0000
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.844 l-5 s-0.594 l-6 s-0.719 l-7 s-0.219 l-8 s-0.922 l-9 s-0.750 l-10 s-0.938 l-11 s-0.000 l-12 s-0.047 l-13 s-0.016 l-14 s-0.031 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [40 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.1001
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3570, 4.4519,] 	Acc:[  16.9798, 16.9798, ]
+    └> [Stats]	Many: [ 0.2674, 0.2674,] Medium: [  0.1577, 0.1577,] Few: [ 0.0717, 0.0717,]
+    └> [Best ]	Acc:	16.9798	Many:	26.7429	Medium:	15.7714	Few:	7.1667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.844 l-5 s-0.625 l-6 s-0.719 l-7 s-0.281 l-8 s-0.922 l-9 s-0.766 l-10 s-0.938 l-11 s-0.000 l-12 s-0.062 l-13 s-0.016 l-14 s-0.031 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [41 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0967
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.3296, 4.4641,] 	Acc:[  15.9118, 15.9118, ]
+    └> [Stats]	Many: [ 0.2471, 0.2471,] Medium: [  0.1460, 0.1460,] Few: [ 0.0683, 0.0683,]
+    └> [Best ]	Acc:	16.9798	Many:	26.7429	Medium:	15.7714	Few:	7.1667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.875 l-5 s-0.594 l-6 s-0.719 l-7 s-0.250 l-8 s-0.922 l-9 s-0.766 l-10 s-0.922 l-11 s-0.016 l-12 s-0.047 l-13 s-0.016 l-14 s-0.031 l-15 s-0.016 l-16 s-0.109 
+---> Epoch: [42 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0688
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.2626, 4.4506,] 	Acc:[  17.1776, 17.1776, ]
+    └> [Stats]	Many: [ 0.2640, 0.2640,] Medium: [  0.1609, 0.1609,] Few: [ 0.0763, 0.0763,]
+    └> [Best ]	Acc:	17.1776	Many:	26.4000	Medium:	16.0857	Few:	7.6333
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.688 l-3 s-0.500 l-4 s-0.875 l-5 s-0.594 l-6 s-0.719 l-7 s-0.281 l-8 s-0.938 l-9 s-0.781 l-10 s-0.906 l-11 s-0.031 l-12 s-0.047 l-13 s-0.016 l-14 s-0.031 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [43 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0847
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.2184, 4.4464,] 	Acc:[  17.8699, 17.8699, ]
+    └> [Stats]	Many: [ 0.2506, 0.2506,] Medium: [  0.1791, 0.1791,] Few: [ 0.0847, 0.0847,]
+    └> [Best ]	Acc:	17.8699	Many:	25.0571	Medium:	17.9143	Few:	8.4667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.875 l-5 s-0.594 l-6 s-0.719 l-7 s-0.281 l-8 s-0.938 l-9 s-0.781 l-10 s-0.891 l-11 s-0.000 l-12 s-0.031 l-13 s-0.000 l-14 s-0.016 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [44 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	3.0312
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.2819, 4.4481,] 	Acc:[  17.3556, 17.3556, ]
+    └> [Stats]	Many: [ 0.2723, 0.2723,] Medium: [  0.1603, 0.1603,] Few: [ 0.0757, 0.0757,]
+    └> [Best ]	Acc:	17.8699	Many:	25.0571	Medium:	17.9143	Few:	8.4667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.875 l-5 s-0.625 l-6 s-0.719 l-7 s-0.281 l-8 s-0.938 l-9 s-0.812 l-10 s-0.891 l-11 s-0.016 l-12 s-0.047 l-13 s-0.000 l-14 s-0.016 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [45 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0242
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.2939, 4.4476,] 	Acc:[  17.6127, 17.6127, ]
+    └> [Stats]	Many: [ 0.2851, 0.2851,] Medium: [  0.1531, 0.1531,] Few: [ 0.0707, 0.0707,]
+    └> [Best ]	Acc:	17.8699	Many:	25.0571	Medium:	17.9143	Few:	8.4667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.875 l-5 s-0.625 l-6 s-0.719 l-7 s-0.312 l-8 s-0.938 l-9 s-0.797 l-10 s-0.891 l-11 s-0.016 l-12 s-0.031 l-13 s-0.000 l-14 s-0.016 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [46 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0287
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.1483, 4.4477,] 	Acc:[  17.6028, 17.6028, ]
+    └> [Stats]	Many: [ 0.2337, 0.2337,] Medium: [  0.1834, 0.1834,] Few: [ 0.0950, 0.0950,]
+    └> [Best ]	Acc:	17.8699	Many:	25.0571	Medium:	17.9143	Few:	8.4667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.625 l-2 s-0.625 l-3 s-0.500 l-4 s-0.875 l-5 s-0.625 l-6 s-0.719 l-7 s-0.281 l-8 s-0.922 l-9 s-0.781 l-10 s-0.891 l-11 s-0.016 l-12 s-0.047 l-13 s-0.000 l-14 s-0.031 l-15 s-0.000 l-16 s-0.109 
+---> Epoch: [47 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	3.0200
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ 4.1525, 4.4351,] 	Acc:[  18.9181, 18.9181, ]
+    └> [Stats]	Many: [ 0.2894, 0.2894,] Medium: [  0.1863, 0.1863,] Few: [ 0.0687, 0.0687,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 0 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [48 | 200]
+    └> Max_state: 0, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 0.9889, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 1 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [49 | 200]
+    └> Max_state: 1, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 0.9889, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 2 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [50 | 200]
+    └> Max_state: 2, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 0.9889, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 3 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [51 | 200]
+    └> Max_state: 3, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 0.9889, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 4 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [52 | 200]
+    └> Max_state: 4, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 1.0581, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 5 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [53 | 200]
+    └> Max_state: 5, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 1.1274, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 6 // Min state: 0
+l-1 s-0.000 l-2 s-0.000 l-3 s-0.000 l-4 s-0.000 l-5 s-0.000 l-6 s-0.000 l-7 s-0.000 l-8 s-0.000 l-9 s-0.000 l-10 s-0.000 l-11 s-0.000 l-12 s-0.000 l-13 s-0.000 l-14 s-0.000 l-15 s-0.000 l-16 s-0.000 
+---> Epoch: [54 | 200]
+    └> Max_state: 6, min_state: 0
+    └> [Train]	Loss:	nan
+    └> [test]	Task: [bs , cat_out]
+    └> [Test]	Loss: [ nan, 4.6122,] 	Acc:[  0.9889, 1.0581, ]
+    └> [Stats]	Many: [ 0.0286, 0.0286,] Medium: [  0.0000, 0.0000,] Few: [ 0.0000, 0.0000,]
+    └> [Best ]	Acc:	18.9181	Many:	28.9429	Medium:	18.6286	Few:	6.8667
+    └> [Param]	LR:	0.10000000
+Max state: 7 // Min state: 0
