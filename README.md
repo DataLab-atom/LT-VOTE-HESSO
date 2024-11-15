@@ -15,4 +15,4 @@ We conduct an ablation study analysis on the CIFAR-100-LT dataset with an imbala
 <img src="./anix.png" alt="示例图片" style="width: 300px; margin: 10px; border: 1px solid #ccc;">
 
 ### Pseudocode
-<img src="./algorithmic.png" alt="示例图片" style="width: 300px; margin: 10px; border: 1px solid #ccc;">
+<img src="[./algorithmic.png](https://anonymous.4open.science/r/AEFCDAISJ/algorithmic.png)" alt="示例图片" style="width: 300px; margin: 10px; border: 1px solid #ccc;">
