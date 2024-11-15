@@ -17,6 +17,8 @@ We conduct an ablation study analysis on the CIFAR-100-LT dataset with an imbala
 ### Pseudocode
 <img src="https://anonymous.4open.science/r/AEFCDAISJ/algorithmic.png" alt="示例图片" style="width: 300px; margin: 10px; border: 1px solid #ccc;">
 
+### ir =50
 ![IR = 50](logit_adjust_ir=50.png)
+### ir = 100
 ![IR = 100](logit_adjust_ir=100.png)
 
