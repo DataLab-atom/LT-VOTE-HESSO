@@ -12,7 +12,7 @@ All the command templates have been placed in ``1.sh``; you can run it directly 
 # Additional 
 ### Ablation Study Analysis on CIFAR-100-LT (ir=100)
 We conduct an ablation study analysis on the CIFAR-100-LT dataset with an imbalance ratio (ir) of 100. Specifically, "Base" refers to the baseline method for long-tailed tasks, while "ours w.o. PSL" denotes the scenario where $\alpha_k \equiv 1$. 
-<img src="https://anonymous.4open.science/r/AEFCDAISJ/anix.png" alt="示例图片" style="width: 300px; margin: 10px; border: 1px solid #ccc;">
+<img src="https://anonymous.4open.science/r/AEFCDAISJ/anix.png" alt="示例图片" style=" margin: 10px; border: 1px solid #ccc;">
 
 ### Pseudocode
 <img src="https://anonymous.4open.science/r/AEFCDAISJ/algorithmic.png" alt="示例图片" style="width: 300px; margin: 10px; border: 1px solid #ccc;">
